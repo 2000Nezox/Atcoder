@@ -1,9 +1,7 @@
-def gcd(a,b):
-    return
-
 a,b,c = map(int,input().split())
 
-if c % gcd(a,b) == 0:
-    print("YES")
-else:
-    print("NO")
+for i in range(b):
+    if (a * i) % b == c:
+        print("YES")
+        exit()
+print("NO")
