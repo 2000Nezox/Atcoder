@@ -1,0 +1,5 @@
+A,B,C = map(int,input().split(' '))
+q = C//min(A,B)
+mod = C%min(A,B)
+ans = q + mod//max(A,B)
+print(ans)
