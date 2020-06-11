@@ -1,24 +1,18 @@
-import math
-A, B, X = map(int, input().split(' '))
-max = 1000000000
-min = 0
-ans = 0
-if X > A * max + B * len(str(max)):
-    print(max)
-    exit()
+A,B,X = map(int,input().split())
+
+left = 0
+right = 10**9+1
+n = 10**5
+
+while right - left > 1:
+    d = len(str(n))
+    price = A * n + B * d
+    if price > X:
+        right = n
+    else:
+        left = n
+    n = (right + left) // 2
+
+print(n)
 
 
-while True:
-    tmp = (max - min) / 2 + min
-    tmp1 = A * tmp + B * len(str(int(tmp)))
-
-    if tmp == ans:
-        print(int(ans))
-        exit()
-
-    # print(tmp)
-    if tmp1 <= X:
-        min = tmp
-    if tmp1 >= X:
-        max = tmp
-    ans = tmp
